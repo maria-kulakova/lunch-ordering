@@ -1,0 +1,15 @@
+= form_tag(menu_orders_path(@menu)) do
+  .row
+    = hidden_field :menu_id, @menu.id
+    - @menu.menu_items.group_by(&:menu_type).each do |menu_items|
+      .col
+        = menu_items[0]
+        - menu_items[1].each do |menu_item|
+          .row
+            .col
+              = menu_item.name
+            .col
+              = menu_item.price
+            .col
+              = radio_button_tag "#{ menu_item.menu_type }_id", menu_item.id
+  %div= submit_tag 'Save'

@@ -1,0 +1,34 @@
+- @menus.each do |menu|
+  .row
+    .col
+      = link_to menu.menu_date, menu_orders_path(menu)
+
+.row
+  .col
+    = t("orders.number")
+  .col
+    = t("orders.user_name")
+  .col
+    = t("orders.menu_items")
+    .row
+      .col
+        = t("menu_items.dish_type")
+      .col
+        = t("menu_items.name")
+      .col
+        = t("menu_items.price")
+- @orders.each do |order|
+  .row
+    .col
+      = order.id
+    .col
+      = order.user.name
+    .col
+      - order.menu_items.each do |menu_item|
+        .row
+          .col
+            = menu_item.menu_type.humanize
+          .col
+            = menu_item.name
+          .col
+            = menu_item.price

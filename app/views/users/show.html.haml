@@ -1,0 +1,20 @@
+.row
+  .col-sm-2
+    = t("users.name")
+  .col-sm-10
+    = @user.name
+.row
+  .col-sm-2
+    = t("users.email")
+  .col-sm-10
+    = @user.email
+.row
+  .col-sm-2
+    = t("users.admin")
+  .col-sm-10
+    = @user.admin
+.row
+  .col-sm-12
+    = link_to t("users.edit_user"), edit_user_path(@user) 
+     
+     
