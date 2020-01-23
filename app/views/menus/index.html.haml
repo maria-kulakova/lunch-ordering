@@ -1,0 +1,7 @@
+- @menus.each do |menu|
+  .row
+    .col-sm-1
+      = link_to menu.menu_date , menu_path(menu)
+    - if menu.for_today? and can? :edit, Menu
+      .col-sm-11
+        = link_to t("forms.edit") , edit_menu_path(menu)

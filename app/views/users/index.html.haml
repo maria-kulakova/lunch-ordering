@@ -1,0 +1,13 @@
+%div= t("users.title")
+.row
+  .col
+    = t("users.name")
+  .col
+    = t("users.email")
+- @users.each do |user|
+  .row
+    .col
+      = user.name
+    .col
+      = user.email
+

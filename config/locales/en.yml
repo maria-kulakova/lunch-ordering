@@ -30,4 +30,41 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  messages:
+    application_service: There is ApplicationService!
+  forms:
+    delete: delete
+    edit: edit
+    update: update
+  menus:
+    dashboard: dashboard
+    for_today: menu for today
+    name: name
+    price: price
+    dish_type: dish type
+  users:
+    title: users
+    my_profile: my profile
+    name: name
+    email: email
+    log_out: log out
+    edit_user: edit
+    admin: admin
+    update_profile: update profile
+  orders:
+    messages:
+      created: Order created!
+      no_items: There is no items selected!
+    title: orders
+    forms:
+      create: create order
+    number: number
+    user_name: user name
+    menu_items: menu items
+  menu_items:
+    delete: delete
+    add: add menu item
+    dish_type: dish type
+    price: price
+    name: name 
+

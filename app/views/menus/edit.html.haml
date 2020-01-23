@@ -1,0 +1,15 @@
+= simple_form_for(@menu) do |f|
+  = f.error_notification
+  %table.table
+    %thead
+      %tr
+        %th
+        %th= t("menus.name")
+        %th= t("menus.price")
+        %th= t("menus.dish_type")
+    %tbody.fields
+      = f.simple_fields_for :menu_items do |builder|
+        = render 'menu_item', f: builder
+  .form-actions
+    = f.button :submit
+    = link_to_add_row(t("menu_items.add"), f, :menu_items, class: 'btn btn-primary')

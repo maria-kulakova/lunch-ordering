@@ -1,0 +1,15 @@
+%h2= t("users.update_profile")
+= form_for(@user, method: :put) do |f|
+  .field
+    = f.label :name
+    %br/
+    = f.text_field :name, autofocus: true, autocomplete: "name"
+  .field
+    = f.label :email
+    %br/
+    = f.email_field :email, autofocus: true, autocomplete: "email"
+  - if current_user.admin?
+    .field
+      = f.label :admin
+      = f.check_box :admin, checked_value: true, unchecked_value: false
+  = f.submit t("forms.update")

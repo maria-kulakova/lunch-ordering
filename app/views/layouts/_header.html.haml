@@ -1,0 +1,17 @@
+%ul.nav
+  - if user_signed_in?
+    %li.nav-link.active
+      = link_to t("users.my_profile"), user_path(current_user)
+    %li.nav-link
+      = link_to t("menus.dashboard"), menus_path
+    - if cannot? :update, Menu
+      %li.nav-link
+        = link_to t("menus.for_today"), menu_path(Menu.for_today)
+    - if can? :read, User
+      %li.nav-link
+        = link_to t("users.title"), users_path
+    - if can? :index, Order
+      %li.nav-link
+        = link_to t("orders.title"), orders_path
+    %li.nav-link
+      = link_to t("users.log_out"), destroy_user_session_path, method: :delete 

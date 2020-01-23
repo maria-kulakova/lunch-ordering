@@ -1,0 +1,13 @@
+.row
+  - @menu_facade.menu_items_groups.each do |group|
+    .col
+      = group.menu_items_type
+      - group.menu_items.each do |menu_item|
+        .row
+          .col
+            = menu_item.name
+          .col
+            = menu_item.price
+          .col
+- if cannot? :edit, Menu
+  = link_to t("orders.forms.create"), new_menu_order_path(@menu_facade.menu) if @menu_facade.available_for_ordering?

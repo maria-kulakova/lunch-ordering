@@ -1,0 +1,7 @@
+%tr
+  %td
+    = f.input_field :_destroy, as: :hidden
+    = link_to t("menu_items.delete"), '#', class: 'remove_record'
+  %td= f.input :name, label: false, input_html: { size: 25 }
+  %td= f.input :price, label: false
+  %td= f.input :menu_type, collection: @menu_facade.menu_items_select_collection, label: false, include_blank: false
